@@ -28,16 +28,40 @@ var todos = [
  * HTML Endpoints
  */
 
-app.get('/api/huge', function huge(req, res) {
+app.get('/api/yuge', function huge(req, res) {
   var uGenerator = Math.floor(Math.random()*100);
   var uString = new Array(uGenerator + 1).join("u");
-  res.json({message: "h" + uString + "ge"});
+  res.json({message: "y" + uString + "ge"});
 });
 
 app.get('/', function homepage(req, res) {
   res.json({ message: "TrumpAPI: Make APIs Great Again. Learn more at TrumpAPI.com."})
 });
 
+app.get('/api/wall', function wall(req, res) {
+//if request is in Spanish, generate wall
+
+var wallArray = ["_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__",
+"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|",
+"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__"];
+var wallConstructor = wallArray.join("\n");
+res.json({ message: "\n" + wallConstructor })
+});
 
 /*
  * JSON API Endpoints
@@ -48,20 +72,6 @@ app.get('/', function homepage(req, res) {
  * the tests to see the exact details. BUILD THE FUNCTIONALITY IN THE
  * ORDER THAT THE TESTS DICTATE.
  */
-
-app.get('/api/todos/search', function search(req, res) {
-
-   var term = req.query.task;
-
-   for (i = 0; i < length.todos; i++) {
-      if (term == todos[i].task) {
-        res.json(todos[i]);
-      } else {
-        console.log("we couldn't find any results")
-      }
-   };
-});
-
 
 
 app.get('/api/todos', function index(req, res) {
