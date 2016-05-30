@@ -34,6 +34,10 @@ app.get('/api/huge', function huge(req, res) {
   res.json({message: "h" + uString + "ge"});
 });
 
+app.get('/', function homepage(req, res) {
+  res.json({ message: "TrumpAPI: Make APIs Great Again. Learn more at TrumpAPI.com."})
+});
+
 
 /*
  * JSON API Endpoints
