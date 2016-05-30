@@ -28,8 +28,10 @@ var todos = [
  * HTML Endpoints
  */
 
-app.get('/', function homepage(req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+app.get('/api/huge', function huge(req, res) {
+  var uGenerator = Math.floor(Math.random()*100);
+  var uString = new Array(uGenerator + 1).join("u");
+  res.json({message: "h" + uString + "ge"});
 });
 
 
