@@ -1,0 +1,29 @@
+{
+  "name": "test-driven-todo-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sf-wdi-labs/test-driven-todo-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sf-wdi-labs/test-driven-todo-api/issues"
+  },
+  "homepage": "https://github.com/sf-wdi-labs/test-driven-todo-api",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "chai": "^3.4.0",
+    "express": "^4.13.4",
+    "mocha": "^2.3.3",
+    "mongoose": "^4.4.19",
+    "q": "^1.4.1",
+    "request": "^2.65.0",
+    "underscore": "^1.8.3"
+  }
+}
